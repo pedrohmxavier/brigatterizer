@@ -6,11 +6,14 @@ function walk(node)
 	// http://is.gd/mwZp7E
 	
 	var child, next;
+	if (node.tagName != undefined){
+
+		if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'  || Array.from(node.classList).indexOf('ace_editor') > -1) {
+			return;
+		}
+		
+	}	
 	
-	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
-	    || node.classList.indexOf('ace_editor') > -1) {
-		return;
-	}
 
 	switch ( node.nodeType )  
 	{
@@ -35,11 +38,9 @@ function walk(node)
 function handleText(textNode) 
 {
 	var v = textNode.nodeValue;
+	console.log(v)
 
-	v = v.replace(/\bThe Cloud\b/g, "My Butt");
-	v = v.replace(/\bThe cloud\b/g, "My butt");
-	v = v.replace(/\bthe Cloud\b/g, "my Butt");
-	v = v.replace(/\bthe cloud\b/g, "my butt");
+	v = v.replace(/([a-zA-Z]+)ado/i, "$1" + "atto")
 	
 	textNode.nodeValue = v;
 }

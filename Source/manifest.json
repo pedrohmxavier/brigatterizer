@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "Cloud To Butt",
-	"version": "1.0",
-	"description": "Replaces the text 'the cloud' with 'my butt'.",
+	"name": "brigatterizer",
+	"version": "0.1",
+	"description": "Replaces words ending with \"ado\" to \"atto\" ",
 	"content_scripts": 
 	[
 		{
