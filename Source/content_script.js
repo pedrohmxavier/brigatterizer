@@ -40,7 +40,7 @@ function handleText(textNode)
 	var v = textNode.nodeValue;
 	console.log(v)
 
-	v = v.replace(/([a-zA-Z]+)ado/i, "$1" + "atto")
+	v = v.replace(/([a-zA-Z]+)ado/gi, "$1" + "atto")
 	
 	textNode.nodeValue = v;
 }
